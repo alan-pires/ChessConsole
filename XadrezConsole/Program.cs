@@ -1,2 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using GameBoard;
+using System;
+
+namespace ChessConsole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Board BoardGame = new Board(8, 8);
+            Console.ReadLine();
+        }
+        
+
+    }
+}
