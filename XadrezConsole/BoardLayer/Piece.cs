@@ -8,9 +8,9 @@ namespace GameBoard
         public int MovesQtt { get; protected set; }
         public Board GameBoard { get; protected set; }
 
-        public Piece(Position pos, PieceColor color, Board gameBoard)
+        public Piece(PieceColor color, Board gameBoard)
         {
-            Pos = pos;
+            Pos = null;
             Color = color;
             GameBoard = gameBoard;
             MovesQtt = 0;
