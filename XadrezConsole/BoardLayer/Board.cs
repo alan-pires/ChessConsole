@@ -27,7 +27,7 @@ namespace GameBoard
             return pieces[pos.Line, pos.Column];
         }
 
-        public bool havePieceAt(Position pos)
+        public bool hasPieceAt(Position pos)
         {
             validatePosition(pos);
             return getPiece(pos) != null;
@@ -35,10 +35,20 @@ namespace GameBoard
 
         public void putPiece(Piece piece, Position pos)
         {
-            if (havePieceAt(pos))
+            if (hasPieceAt(pos))
                 throw new BoardException("There is already a piece at this position");
             pieces[pos.Line, pos.Column] = piece;
             piece.Pos = pos;
+        }
+
+        public Piece takePiece(Position pos)
+        {
+            if (getPiece(pos) == null)
+                return null;
+            Piece aux = getPiece(pos);
+            aux.Pos = null;
+            pieces[pos.Line, pos.Column] = null;
+            return aux;
         }
 
         public bool isValidePosition(Position pos)

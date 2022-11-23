@@ -15,5 +15,10 @@ namespace GameBoard
             GameBoard = gameBoard;
             MovesQtt = 0;
         }
+
+        public void incrementMovement()
+        {
+            MovesQtt++;
+        }
     }
 }

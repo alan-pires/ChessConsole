@@ -11,11 +11,8 @@ namespace ChessConsole
         {
             try
             {
-                Board BoardGame = new Board(8, 8);
-                BoardGame.putPiece(new Tower(PieceColor.Black, BoardGame), new Position(8, 8));
-                BoardGame.putPiece(new Tower(PieceColor.Black, BoardGame), new Position(1, 3));
-                BoardGame.putPiece(new King(PieceColor.Black, BoardGame), new Position(0, 0));
-                Screen.printBoard(BoardGame);
+                ChessMatch match = new ChessMatch();
+                Screen.printBoard(match.board);
                 Console.ReadLine();
             }
             catch (BoardException e)
